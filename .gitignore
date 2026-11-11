@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+# Diccionario generado localmente; no subir datos de ejecucion.
+datos/diccionario.json

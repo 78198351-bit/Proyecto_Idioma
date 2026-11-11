@@ -1,0 +1,48 @@
+"""Equivalencias editables del alfabeto original al idioma secreto."""
+
+# Cada letra se convierte en una pieza (símbolo, sílaba o combinación).
+# Los estudiantes pueden cambiar estos valores para crear su propio alfabeto.
+ALFABETO = {
+    "A": "Zr",
+    "B": "uo",  
+    "C": "na", 
+    "D": "pl", 
+    "E": "7",
+    "F": "kj", 
+    "G": "op", 
+    "H": "ñm",  
+    "I": "er", 
+    "J": "ug",
+    "K": "hg",  
+    "L": "67", 
+    "M": "bs", 
+    "N": "77",  
+    "O": "sw",
+    "P": "qw", 
+    "Q": "xs",  
+    "R": "vc", 
+    "S": "tre", 
+    "T": "we",
+    "U": "jd", 
+    "V": "gu", 
+    "W": "0",  
+    "X": "dt", 
+    "Y": "ft",
+    "Z": "9", # La regla de reemplazo convierte esta pieza en 0.
+}
+
+
+def normalizar_letra(letra):
+    """Convierte vocales acentuadas a su forma base; conserva la Ñ."""
+    letra = letra.upper()
+    if letra == "Ñ":
+        return "Ñ"
+
+    equivalencias = {
+        "Á": "A", "À": "A", "Ä": "A",
+        "É": "E", "È": "E", "Ë": "E",
+        "Í": "I", "Ì": "I", "Ï": "I",
+        "Ó": "O", "Ò": "O", "Ö": "O",
+        "Ú": "U", "Ù": "U", "Ü": "U",
+    }
+    return equivalencias.get(letra, letra)
